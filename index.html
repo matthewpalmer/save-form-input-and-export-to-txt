@@ -1,80 +1,10 @@
-
+<!DOCTYPE html>
 <html>
-<meta name="viewport" content="user-scalable=0"/>
 <head>
-<title>Notes</title>
-<style>
 
-</style>
-<link rel="stylesheet" media="screen and (max-width:1280px)" href="stylemobile.css" />
-<link rel="stylesheet" media="screen and (min-width:1280px)" href="styles.css" />
-<!-- <LINK href="soothingdropdown.css" rel="stylesheet" type="text/css"> -->
+<script src="autosaveform.js"></script>
 
-<!-- Other people's scripts -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="autosaveform.js">
-
-/***********************************************
-* Auto Save Form script (c) Dynamic Drive (www.dynamicdrive.com)
-* This notice MUST stay intact for legal use
-* Visit http://www.dynamicdrive.com/ for this script and 100s more.
-***********************************************/
-
-</script>
-<script>
-function toggle(div_id) {
-	var el = document.getElementById(div_id);
-	if ( el.style.display == 'none' ) {	el.style.display = 'block';}
-	else {el.style.display = 'none';}
-}
-function blanket_size(popUpDivVar) {
-	if (typeof window.innerWidth != 'undefined') {
-		viewportheight = window.innerHeight;
-	} else {
-		viewportheight = document.documentElement.clientHeight;
-	}
-	if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
-		blanket_height = viewportheight;
-	} else {
-		if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
-			blanket_height = document.body.parentNode.clientHeight;
-		} else {
-			blanket_height = document.body.parentNode.scrollHeight;
-		}
-	}
-	var blanket = document.getElementById('blanket');
-	blanket.style.height = blanket_height + 'px';
-	var popUpDiv = document.getElementById(popUpDivVar);
-	popUpDiv_height=blanket_height/2-150;//150 is half popup's height
-	popUpDiv.style.top = popUpDiv_height + 'px';
-}
-function window_pos(popUpDivVar) {
-	if (typeof window.innerWidth != 'undefined') {
-		viewportwidth = window.innerHeight;
-	} else {
-		viewportwidth = document.documentElement.clientHeight;
-	}
-	if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
-		window_width = viewportwidth;
-	} else {
-		if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
-			window_width = document.body.parentNode.clientWidth;
-		} else {
-			window_width = document.body.parentNode.scrollWidth;
-		}
-	}
-	var popUpDiv = document.getElementById(popUpDivVar);
-	window_width=window_width/2-150;//150 is half popup's width
-	popUpDiv.style.left = window_width + 'px';
-}
-function popup(windowname) {
-	blanket_size(windowname);
-	window_pos(windowname);
-	toggle('blanket');
-	toggle(windowname);		
-}
-</script>
-
+<title></title>
 <script>
 
 var formsave1=new autosaveform({
@@ -84,80 +14,19 @@ var formsave1=new autosaveform({
 
 </script>
 
-
-
-
 </head>
 
 <body>
-<div id="blanket" style="display:none;"></div>
-<div id="popUpDiv" style="display:none;">
-<br/>
-Everything you type will be <strong>saved automatically</strong> to your computer. 
-<br/>
-<br/>
-<br/>
-To <strong>export</strong>, enter a filename and hit export and then download, however this only works in Google Chrome.
-<br/>
-<br/>
-<br/>
-<a href="#" onclick="popup('popUpDiv')">Close</a>
-</div>
-<div class = "windowframe">
-
-<div class = "menu">
-<nav>
-		<ul>
-			<!--<li><a href="#">View</a></li>-->
-			<li class="drop">
-				<a href="#"><span class="menutop">*</span></a>
-				
-				<div class="dropdownContain">
-					<div class="dropOut">
-						<!--<div class="triangle"></div>-->
-						<ul>
-							<li><a href="#" onclick="popup('popUpDiv')">Info</a></li>
-														<li><a target="_blank" href="http://www.palmer.im">About Me</a></li>
-														<li></li>
-						<div class = "export"><input type="text" value="notes.txt" placeholder="filename.txt">
+<div class = "export"><input type="text" value="notes.txt" placeholder="filename.txt">
     <button onclick="downloadFile()">Export</button> <div id="output"></div></div>
-    <span class="small"></span>
-    <li></li>
-    
-							
-							
-						</ul>
-					</div>
-				</div>
-			
-			</li>
-			<!-- <li><a href="#">Help</a></li> -->
-			
-		</ul>
-		
-</nav>
-
-</div>
-
-
-<form id="feedbackform" method="post">
+    <form id="feedbackform" method="post">
 	<div class = "area">
 	
 		<textarea id = "feedback" placeholder="Anything you type will be saved automatically."></textarea>
 	
 	</div>
 </form>
-
-
-</div>
-
-
-
-
 <script>
-
-//MY SCRIPT
-
 
 //NOT MINE - A[DOWNLOAD]
 
@@ -234,7 +103,7 @@ var downloadFile = function() {
 };
 </script>
 
-
+    
 </body>
 
 </html>
